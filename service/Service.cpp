@@ -64,39 +64,45 @@ Compte * Service::getCompteById(vector<Compte*> &listeCompte, int id){
 
 
 Transaction * Service::createTrans(vector<Compte*> &listeCompte){
-    Transaction * t = new Transaction();
-    View * vue = new View();
-    t->setType(vue->getTypeTransac());
+        Transaction * t = new Transaction();
 
-    
+        View * vue = new View();
+        t->setType(vue->getTypeTransac());
 
-    
-    showCompte(listeCompte);
-    cout << endl;
+        
 
+        
+        Service::showCompte(listeCompte);
+        cout << endl;
 
-    switch (t->getTypeInt())
-    {
-        case DEPOT:
-            t->setCompte(getCompteById(listeCompte, vue->saisieInt("id du compte de DEPOT")));
-            cout << endl ;
-            t->setMnt(vue->saisieInt("montant de depot"));
-            cout << endl ;
-            break;
-        case RETRAIT:
-            t->setCompte(getCompteById(listeCompte, vue->saisieInt("id du compte de RETRAIT")));
-            cout << endl ;
-            t->setMnt(vue->saisieInt("montant de retrait"));
-            cout << endl ;
-            break;
-        case VIREMENT:
-            // not yet
-            break;
-        default:
-            break;
+        
+        switch (t->getTypeInt())
+        {
+            case DEPOT:
+                t->setCompte(getCompteById(listeCompte, vue->saisieInt("id du compte de DEPOT")));
+                cout << endl ;
+                t->setMnt(vue->saisieInt("montant de depot"));
+                cout << endl ;
+                break;
+            case RETRAIT:
+                t->setCompte(getCompteById(listeCompte, vue->saisieInt("id du compte de RETRAIT")));
+                cout << endl ;
+                t->setMnt(vue->saisieInt("montant de retrait"));
+                cout << endl ;
+                break;
+            case VIREMENT:
+                // not yet
+                break;
+            default:
+                break;
+        }
+        //*/
+
+        return t;
     }
 
-    return t;
+void Service::test(){
+    cout << "squall";
 }
 
 void Service::makeTransac(vector<Transaction*> &transactions, Transaction * t){
@@ -114,6 +120,11 @@ vector<Transaction*> Service::getTransactionsOfCompte(vector<Transaction*> &tran
 
     return transaCompte;
 }
+
+void Service::listTransactionOfCompte(vector<Transaction*> &transactions, vector<Compte*> &listeCompte){
+    Service::showCompte(listeCompte);
+}
+
 
 
 

@@ -9,17 +9,48 @@ unsigned int Transaction::cpt =0;
 Transaction::Transaction() {
     Squall * utils = new Squall();
 
+    Date * d = new Date();
+
     Transaction::cpt++;
     id=Transaction::cpt;
 
     // get the current date
     vector <string> s = utils->explode(utils->getDateInStr(), '-');
-    date->setJour(atoi(s[0].c_str()));
-    date->setMois(atoi(s[1].c_str()));
-    date->setAnne(atoi(s[2].c_str()));
+//  #####################################
+    // cout << s[0] <<endl;
+    // cout << s[1] <<endl;
+    // cout << s[2] <<endl;
+    
+    
+    // cout << s[0] <<endl;
+    string z = s[0].c_str();
+    string y = s[1].c_str();
+    string w = s[2].c_str();
+    // date->setJour(atoi((z.c_str())));
+
+    // int b = stoi(z);
+    // int e = stoi(y);
+    // int d = stoi(w);
+    // cout << b;
 
 
 
+   
+
+    d->setJour(atoi(s[0].c_str()));
+    d->setMois(atoi(s[1].c_str()));
+    d->setAnne(atoi(s[2].c_str()));
+
+    // cout << d->getJour() << endl;
+    // cout << d->getMois() << endl;
+    // cout << d->getAnne() << endl;
+    // date->setJour(b);
+    // date->setMois(e);
+    // date->setAnne(d);
+    date=d;
+
+
+    
 
 }
 

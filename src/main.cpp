@@ -21,6 +21,14 @@ int main() {
         goto mprinci;
         break;
     case 2:
+        // cout << "squall";
+        // cin.clear();
+        // cin.ignore();
+        // cin.get();
+        // fonc->showCompte(listecompte);
+
+        // fonc->test();
+        // fonc->createTrans(listecompte);
         fonc->makeTransac(transactions, fonc->createTrans(listecompte));
         goto mprinci;
         break;

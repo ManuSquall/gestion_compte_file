@@ -51,3 +51,10 @@ vector<std::string> Squall::explode(std::string const & s, char delim)
     return result;
 }
 
+void Squall::pause(){
+    cout << "Appuyer sur \"entrée\" pour continuer" <<endl;
+    cin.clear();
+    cin.ignore();
+    cin.get();
+}
+

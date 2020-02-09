@@ -21,6 +21,7 @@ public:
     string getTime();
     string getDateInStr();
     vector<string> explode(string const & s, char delim);
+    void pause();
 };
 
 };
