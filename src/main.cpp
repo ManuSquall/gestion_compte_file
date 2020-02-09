@@ -33,7 +33,8 @@ int main() {
         goto mprinci;
         break;
     case 3:
-        fonc->showCompte(listecompte);
+        // fonc->showCompte(listecompte);
+        fonc->listTransactionOfCompte(transactions, listecompte);
         goto mprinci;
         break;
     default:

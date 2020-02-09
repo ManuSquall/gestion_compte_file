@@ -51,6 +51,6 @@ void Date::saisie(){
 }
 
 void Date::affiche(){
-    cout << getJour() << "-" << getMois() << "-" << getAnne();
+    cout << getJour() << "/" << getMois() << "/" << getAnne();
 
 }

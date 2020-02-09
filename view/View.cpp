@@ -63,7 +63,7 @@ int View::menuPrincipal(){
         cout << "\t\t\t\t\t MENU" << endl;
         cout << "\n\t\t\t\t\t 1-            CREER COMPTE" << endl;
         cout << "\n\t\t\t\t\t 2-            FAIRE UNE TRANSACTION" << endl;
-        cout << "\n\t\t\t\t\t 3-            LISTER COMPTE" << endl;
+        cout << "\n\t\t\t\t\t 3-            LISTER DES TRANSACTIONS D'UN COMPTE" << endl;
         cout << "\n\t\t\t\t\t 4-            QUITTER" << endl;
         cout << "\n\n" << endl;
         cin >> chint;

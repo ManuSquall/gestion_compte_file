@@ -101,6 +101,22 @@ Transaction * Service::createTrans(vector<Compte*> &listeCompte){
         return t;
     }
 
+void Service::showTransaction(vector<Transaction*> transactions){
+    int b = transactions.size();
+    for(int i=0; i < b; i++) {
+        cout << "transaction id: " << transactions[i]->getId() << endl;
+        cout << "transaction type: " << transactions[i]->getTypeString() << endl;
+        cout << "transaction mnt: " << transactions[i]->getMnt() << endl;
+         cout << "transaction date: "; transactions[i]->getDate()->affiche();
+        cout << "\n\n";
+        // cout << "squall";
+    }
+    cin.clear();
+    cin.ignore();
+    cin.get();
+    
+}
+
 void Service::test(){
     cout << "squall";
 }
@@ -123,6 +139,12 @@ vector<Transaction*> Service::getTransactionsOfCompte(vector<Transaction*> &tran
 
 void Service::listTransactionOfCompte(vector<Transaction*> &transactions, vector<Compte*> &listeCompte){
     Service::showCompte(listeCompte);
+    cout << endl;
+    View * vue = new View();
+
+    showTransaction(getTransactionsOfCompte(transactions,vue->saisieInt("id du compte à afficher")));
+
+
 }
 
 

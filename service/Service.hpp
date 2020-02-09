@@ -24,6 +24,10 @@ namespace services {
             Transaction * createTrans(vector <Compte *> &listeCompte);
             void makeTransac(vector<Transaction*> &transactions, Transaction * t);
 
+            void showTransaction(vector<Transaction*> transactions);
+
+
+
             vector<Transaction*> getTransactionsOfCompte(vector<Transaction*> &transactions, int id);
 
             void listTransactionOfCompte(vector<Transaction*> &transactions, vector<Compte*> &listeCompte);
