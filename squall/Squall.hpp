@@ -22,6 +22,7 @@ public:
     string getDateInStr();
     vector<string> explode(string const & s, char delim);
     void pause();
+    int convertStringToInt(string chaine);
 };
 
 };

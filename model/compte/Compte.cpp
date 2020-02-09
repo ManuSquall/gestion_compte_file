@@ -51,9 +51,9 @@ int Compte::getType() {
 
 void Compte::genererNumero(){
     Squall * utils = new Squall();
-    numero += "C_";
+    numero += "C-";
     numero += utils->getTime();
-    numero += "_";
+    numero += "-";
     numero += Compte::cpt;
 }
 

@@ -1,9 +1,11 @@
 #include "Service.hpp"
 #include "../view/View.hpp"
+#include "../squall/Squall.hpp"
 
 
 using namespace services;
 using namespace view;
+using namespace squall;
 using namespace std;
 
 Service::Service() {
@@ -37,18 +39,14 @@ void Service::addCompte(vector<Compte*> &listeCompte,Compte * c){
 }
 
 void Service::showCompte(vector<Compte*> &listeCompte){
+    View * vue = new View();
+    Squall * utils = new Squall();
     int b = listeCompte.size();
     for(int i=0; i < b; i++) {
-        cout << listeCompte[i]->getId() << endl;
-        cout << listeCompte[i]->getNumero() << endl;
-        cout << listeCompte[i]->getType() << endl;
-        cout << listeCompte[i]->getSolde() << endl;
-        cout << "\n\n";
-        // cout << "squall";
+        cout << "Compte n " <<i <<endl;
+        vue->showACompte(listeCompte[i]);
     }
-    cin.clear();
-    cin.ignore();
-    cin.get();
+    utils->pause();
     
 }
 Compte * Service::getCompteById(vector<Compte*> &listeCompte, int id){
@@ -64,6 +62,8 @@ Compte * Service::getCompteById(vector<Compte*> &listeCompte, int id){
 
 
 Transaction * Service::createTrans(vector<Compte*> &listeCompte){
+
+    
         Transaction * t = new Transaction();
 
         View * vue = new View();
@@ -102,23 +102,21 @@ Transaction * Service::createTrans(vector<Compte*> &listeCompte){
     }
 
 void Service::showTransaction(vector<Transaction*> transactions){
+    View * vue = new View();
+    Squall * utils = new Squall();
     int b = transactions.size();
     for(int i=0; i < b; i++) {
-        cout << "transaction id: " << transactions[i]->getId() << endl;
-        cout << "transaction type: " << transactions[i]->getTypeString() << endl;
-        cout << "transaction mnt: " << transactions[i]->getMnt() << endl;
-         cout << "transaction date: "; transactions[i]->getDate()->affiche();
-        cout << "\n\n";
-        // cout << "squall";
+        vue->showATransaction(transactions[i]);
     }
-    cin.clear();
-    cin.ignore();
-    cin.get();
+    utils->pause();
     
 }
 
-void Service::test(){
-    cout << "squall";
+void Service::test(vector <Compte *> &listeCompte){
+    Squall * utils = new Squall();
+    cout << listeCompte.size();
+    
+    utils->pause();
 }
 
 void Service::makeTransac(vector<Transaction*> &transactions, Transaction * t){

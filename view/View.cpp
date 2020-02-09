@@ -84,19 +84,36 @@ int View::getTypeTransac(){
     return chint;
 }
 
-void listTransactions(vector <Transaction *> transaCompte){
+void View::listTransactions(vector <Transaction *> transaCompte){
+    Squall * utils = new Squall();
     int b = transaCompte.size();
     for(int i=0; i < b; i++) {
         cout << "Transaction n "<< i << endl;
-        transaCompte[i]->getDate()->affiche();
-        cout << endl;
-        cout << "id : "<< transaCompte[i]->getId() << endl;
-        cout << "Montant : "<< transaCompte[i]->getId() << endl;
-        cout << "Type : "<< transaCompte[i]->getTypeString() << endl;
-        cout << "\n\n";
-        // cout << "squall";
+        showATransaction(transaCompte[i]);
     }
-    cin.clear();
-    cin.ignore();
-    cin.get();
+    utils->pause();
+}
+
+void View::showACompte(Compte * c){
+    cout << "-----------------------------------";
+    cout <<"Id" << c->getId() << endl;
+    cout <<"Numero" << c->getNumero() << endl;
+    cout <<"Type" << c->getType() << endl;
+    cout <<"Solde" << c->getSolde() << endl;
+    cout << "-----------------------------------";
+
+    cout << "\n\n";
+}
+
+
+void View::showATransaction(Transaction * t){
+    cout << "-----------------------------------";
+    t->getDate()->affiche();
+    cout << endl;
+    cout << "id : "<< t->getId() << endl;
+    cout << "Montant : "<< t->getMnt() << endl;
+    cout << "Type : "<< t->getTypeString() << endl;
+    cout << "-----------------------------------";
+
+    cout << "\n\n";
 }

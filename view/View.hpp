@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include "../model/transaction/Transaction.hpp"
+#include "../model/compte/Compte.hpp"
 
 using namespace std;
 using namespace model;
@@ -20,6 +21,8 @@ namespace view {
         int getTypeTransac();
 
         void listTransactions(vector <Transaction *> transaCompte);
+        void showACompte(Compte * c);
+        void showATransaction(Transaction * t);
         
     };
 };

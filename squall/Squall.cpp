@@ -52,9 +52,13 @@ vector<std::string> Squall::explode(std::string const & s, char delim)
 }
 
 void Squall::pause(){
-    cout << "Appuyer sur \"entrée\" pour continuer" <<endl;
+    cout << "Appuyer deux fois sur \"entrée\" pour continuer" <<endl;
     cin.clear();
     cin.ignore();
     cin.get();
+}
+
+int Squall::convertStringToInt(string chaine){
+    return atoi(chaine.c_str());
 }
 

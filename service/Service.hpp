@@ -33,6 +33,6 @@ namespace services {
             void listTransactionOfCompte(vector<Transaction*> &transactions, vector<Compte*> &listeCompte);
 
             //debug
-            void test();
+            void test(vector <Compte *> &listeCompte);
     };
 };

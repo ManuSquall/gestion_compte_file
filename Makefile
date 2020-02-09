@@ -23,5 +23,5 @@ clean:
 	-rm $(BIN)/*
 
 
-compile: g++ -Wall -Wextra model/date/*cpp view/*cpp squall/*cpp model/compte/*cpp model/ce/*cpp model/cc/*cpp model/transaction/*cpp service/*cpp src/*cpp -o bin/out
+compile:  g++ -Wall -Wextra model/date/*cpp view/*cpp squall/*cpp model/compte/*cpp model/ce/*cpp model/cc/*cpp model/transaction/*cpp fao/*cpp service/*cpp src/*cpp -o bin/out
 run: ./bin/out
